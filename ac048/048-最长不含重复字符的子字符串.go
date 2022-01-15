@@ -2,7 +2,7 @@ package ac048
 
 //动态规划+hashmap
 //滑动窗口+hashmap
-//pwwkew 可看收藏的b站题解
+//左右变量记录窗口边界，map记录字符是否在窗口中出现过
 func LengthOfLongestSubstring(s string) int {
 	maxLen := 0
 	m := make(map[byte]bool,0)
