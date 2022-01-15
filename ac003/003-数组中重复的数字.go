@@ -1,4 +1,4 @@
-package problem003
+package ac003
 
 /**
  * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
@@ -8,6 +8,7 @@ package problem003
  * @return int整型
  */
 // [2,3,1,0,2,5,3]
+// 坐标交换,判断异常情况后循环比较
 func Duplicate(nums []int) int {
 	length := len(nums)
 	if length <= 0 {
@@ -23,4 +24,3 @@ func Duplicate(nums []int) int {
 	}
 	return -1
 }
-

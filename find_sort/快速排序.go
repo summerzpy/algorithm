@@ -1,25 +1,31 @@
 package find_sort
 
-import "fmt"
+import (
+	"math/rand"
+)
 
-func quickSort(a []int) {
-	if len(a) <= 1 {
+func sortArray2(nums []int) []int {
+	quickSort(nums, 0, len(nums)-1)
+	return nums
+}
+func quickSort(nums []int, left, right int) {
+	if left > right {
 		return
 	}
-	mid := a[0]
-	head, tail := 0, len(a)-1
-	for i := 1; i <= tail; {
-		if a[i] > mid {
-			a[i], a[tail] = a[tail], a[i]
-			tail--
-		} else {
-			a[i], a[head] = a[head], a[i]
-			head++
+	randomEle := rand.Intn(right-left+1) + left
+	nums[left], nums[randomEle] = nums[randomEle], nums[left]
+	i, j, base := left, right, nums[left]
+	for i < j {
+		for nums[j] >= base && i < j {
+			j--
+		}
+		for nums[i] <= base && i < j {
 			i++
 		}
-		fmt.Println(head, i)
+		nums[i], nums[j] = nums[j], nums[i]
 	}
-	quickSort(a[:head])
-	quickSort(a[head+1:])
+	nums[i], nums[left] = nums[left], nums[i]
+	quickSort(nums, left, i - 1)
+	quickSort(nums, i + 1, right)
 }
 

@@ -1,4 +1,4 @@
-package problem046
+package ac046
 
 import (
 	"fmt"
@@ -6,5 +6,5 @@ import (
 )
 
 func Test_getTranslation(t *testing.T) {
-	fmt.Println(Solve(12258))
+	fmt.Println(translateNum(220))
 }
